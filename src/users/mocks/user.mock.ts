@@ -10,8 +10,6 @@ export const mockUser: Partial<User> = {
   company: 'Foo',
   isActive: true,
   userRole: UserRole.OPERATOR,
-  createdAt: new Date(),
-  updatedAt: new Date(),
 };
 
 export const mockCreateUser: CreateUserDto = {

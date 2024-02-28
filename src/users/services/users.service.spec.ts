@@ -116,12 +116,12 @@ describe('UsersService', () => {
 
   describe('create', () => {
     it('Should create and return the new user without password prop', async () => {
-      const { createdAt, updatedAt, userId } = mockUser;
+      const { userId } = mockUser;
       repository.save.mockReturnValue(mockUser);
       const user = await service.create(mockCreateUser);
       const { password, ...rest } = mockCreateUser;
 
-      const cleanedUser = { ...rest, createdAt, updatedAt, userId };
+      const cleanedUser = { ...rest, userId };
       expect(user).toEqual(cleanedUser);
     });
   });
