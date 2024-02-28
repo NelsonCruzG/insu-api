@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  db-service:
+    container_name: db-service
+    image: postgres:14
+    restart: always
+    ports:
+      - ${ORM_DB_PORT}:5432
+    environment:
+      POSTGRES_USERNAME: ${ORM_DB_USER_NAME}
+      POSTGRES_DB: ${ORM_DB_NAME}
+      POSTGRES_PASSWORD: ${ORM_DB_PASSWORD}
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+      - pgdata:/var/liv/postgresql/data
+
+volumes:
+  pgdata:
