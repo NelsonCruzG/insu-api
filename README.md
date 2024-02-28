@@ -11,6 +11,10 @@ $ npm install
 ## Running the app
 
 ```bash
+
+# Run PostgreSQL with docker:
+$ docker compose up
+
 # development
 $ npm run start
 
@@ -19,6 +23,9 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+
+
 ```
 
 ## Test
