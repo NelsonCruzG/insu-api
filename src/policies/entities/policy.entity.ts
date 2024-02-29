@@ -23,7 +23,7 @@ export enum PolicyStatus {
 @Entity('policies')
 export class Policy {
   @PrimaryGeneratedColumn({ name: 'policy_id' })
-  userId: number;
+  policyId: number;
 
   @Column({ name: 'policy_number' })
   policyNumber: string;
