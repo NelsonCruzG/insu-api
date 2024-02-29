@@ -19,7 +19,7 @@ export class UsersService {
   async findByEmail(email: string): Promise<User> {
     return this.usersRepo.findOne({
       where: { email },
-      select: ['password', 'userId', 'isActive'],
+      select: ['password', 'userId'],
     });
   }
 
