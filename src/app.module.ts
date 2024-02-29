@@ -7,7 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import { PoliciesModule } from './policies/policies.module';
-import { LoggerMiddleware } from './middleware';
+import { ErrorFilter, LoggerMiddleware } from './middleware';
 
 @Module({
   imports: [
@@ -26,6 +26,10 @@ import { LoggerMiddleware } from './middleware';
     {
       provide: APP_GUARD,
       useClass: AuthGuard,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: ErrorFilter,
     },
   ],
 })
