@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
+import { PoliciesModule } from './policies/policies.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { JwtService } from '@nestjs/jwt';
       validationSchema,
     }),
     UsersModule,
+    PoliciesModule,
   ],
   controllers: [],
   providers: [
