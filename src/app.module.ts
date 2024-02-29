@@ -11,11 +11,11 @@ import { PoliciesModule } from './policies/policies.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(databaseOptions),
-    AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema,
     }),
+    AuthModule,
     UsersModule,
     PoliciesModule,
   ],
