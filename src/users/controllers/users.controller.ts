@@ -10,6 +10,7 @@ import {
 import { UsersService } from '../services/users.service';
 import { User } from '../entities/users.entity';
 import { CreateUserDto } from '../dto';
+import { Public } from '../../../utils';
 
 @ApiTags('Users')
 @Controller('users')
@@ -22,6 +23,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @Public()
   @Post()
   @ApiCreatedResponse({ description: 'Returns the newly created user' })
   @ApiBadRequestResponse({ description: 'Returns a list of errors' })
