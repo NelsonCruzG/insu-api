@@ -1,5 +1,5 @@
 const loginBody = {
-  username: 'jDoe@email.com',
+  email: 'jDoe@email.com',
   password: 'changeme',
 };
 export const loginSchema = { schema: { example: loginBody } };
