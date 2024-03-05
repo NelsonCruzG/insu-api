@@ -13,10 +13,12 @@ export class ErrorFilter implements ExceptionFilter {
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
     const status = exception.getStatus();
+    const detail = exception.getResponse();
 
     response.status(status).json({
       statusCode: status,
-      message: exception.message,
+      message: detail['error'] || exception.message,
+      details: detail['message'],
       timestamp: new Date().toISOString(),
       path: request.url,
     });
